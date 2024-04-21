@@ -5,3 +5,6 @@ ripgrep
 snapd
 git
 github-cli
+zsh
+zsh-syntax-highlighting
+zsh-autosuggestions
