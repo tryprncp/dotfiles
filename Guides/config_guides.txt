@@ -1,0 +1,10 @@
+--Edit grub config--
+nvim /etc/default/grub
+GRUB_GFXMODE="1920x1080"
+export GRUB_MENU_PICTURE="/usr/share/images/desktop-base/chainsawman.jpg"
+
+--Customize gdm theme--
+sudo ./tweaks.sh -g -b /home/mcdoughnuts/Pictures/Wallpapers/GTASanAndreas/GTA_SanAndreas_Artwork_GSF_Ballas.jpg -n
+
+--Customize shell and app theme--
+sudo ./install.sh -d /usr/share/themes/ -n mcOS -o solid -c Dark -a normal -t default -m -l

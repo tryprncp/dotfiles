@@ -1,0 +1,26 @@
+#Download MP3 in the Highest Format Available with Metadata and Thumbnail
+yt-dlp -x --audio-format mp3 --embed-thumbnail --add-metadata -o "/home/mcdoughnuts/Music/downloads/%(title)s.%(ext)s" -f 'bestaudio/best' URL
+
+        -x: Instructs yt-dlp to extract audio.
+        --audio-format mp3: Specifies the audio format as MP3.
+        --embed-thumbnail: Embeds the video thumbnail as the album art in the MP3 file.
+        --add-metadata: Adds metadata (title, artist, etc.) to the MP3 file.
+        -o "/path/to/your/folder/%(title)s.%(ext)s": Sets the output file path and name format, where % (title)s.%(ext)s is replaced with the video title and file extension.
+        -f 'bestaudio/best': Downloads the best available audio quality.
+
+#Download MP3 from a list.txt in Highest Format Available with Metadata and Thumbnail
+yt-dlp -x --audio-format mp3 --embed-thumbnail --add-metadata -o "/home/mcdoughnuts/Music/%(title)s.%(ext)s" -f 'bestaudio/best' -a "/home/mcdoughnuts/list.txt"
+	
+	-a list.txt: Instructs yt-dlp to read the list of video URLs from the "list.txt" file.
+
+#Download MP3 Playlist in Highest Format Available with Metadata and Thumbnail
+yt-dlp -x --audio-format mp3 --embed-thumbnail --add-metadata -o "/home/mcdoughnuts/Music/downloads/%(title)s.%(ext)s" -f 'bestaudio/best' "https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID"
+   
+	Replace "https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" with the URL of the playlist you want to download.
+
+#Download MP4 in Specific Quality
+yt-dlp -f 'bestvideo[height=720]+bestaudio/best[height=720]' -o "/home/mcdoughnuts/Videos/downloads/%(title)s.%(ext)s" URL
+yt-dlp --format 247 -o "/home/mcdoughnuts/Videos/downloads/%(title)s.%(ext)s" https://www.youtube.com/watch?v=GtCPvcu220s
+
+	Replace 720 with the desired quality (e.g., 1080, 480, etc.).
+	Make sure you replace "/path/to/your/folder/" with your desired folder path.

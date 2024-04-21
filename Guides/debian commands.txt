@@ -1,0 +1,253 @@
+Package Management Commands:
+
+    apt-get - Package management tool for installing, updating, and removing packages.
+        Update package lists: sudo apt-get update
+        Install a package: sudo apt-get install package_name
+        Remove a package: sudo apt-get remove package_name
+
+    dpkg - Package management for individual package operations.
+        Install a package: dpkg -i package.deb
+        Remove a package: dpkg -r package_name
+
+    apt-cache - Query and manipulate APT package cache.
+        Search for a package: apt-cache search package_name
+        Show package details: apt-cache show package_name
+
+    aptitude - An advanced terminal-based package manager with dependency resolution.
+        Install a package: sudo aptitude install package_name
+        Remove a package: sudo aptitude remove package_name
+
+File and Directory Management Commands:
+    touch - Create a file
+        Create a file named log.txt: touch log.txt
+        Create multiple files: for i in {1..10}; do touch  document${i}.txt; done
+
+    ls - List files and directories in the current directory.
+        List files and directories: ls
+        List files and directories with details: ls -l
+
+    cd - Change the current working directory.
+        Change to a directory: cd /path/to/directory
+        Go to the home directory: cd ~
+
+    mkdir - Create a new directory.
+        Create a directory: mkdir directory_name
+    mkdir -p dir1/{subdir1,subdir2,subdir3}
+    mkdir -p lokal/{user/{docs,docs2,docs3},user2,user3}
+
+    rm - Remove files or directories.
+        Remove a file: rm file_name
+        Remove a directory (and its contents): rm -r directory_name
+        Remove everything that ends with .txt: rm *.txt
+        Remove everything that starts with doc: rm doc*
+        
+    cp - Copy files and directories.
+        Copy a file to a different location: cp source_file destination_directory
+        Copy a directory and its contents: cp -r source_directory destination_directory
+
+    mv - Move or rename files and directories.
+        Move a file to a different location: mv source_file destination_directory
+        Rename a file or directory: mv old_name new_name
+
+    ln - Create symbolic links or hard links to files.
+        Create a symbolic link: ln -s source_file link_name
+        Create a hard link: ln source_file link_name
+
+File Compression and Archiving Commands:
+
+    tar - Create, extract, or manipulate archive files.
+        Create a tarball: tar -cvf archive.tar files
+        Extract a tarball: tar -xvf archive.tar
+
+    gzip - Compress or decompress files.
+        Compress a file: gzip file_name
+        Decompress a file: gzip -d file_name.gz
+
+File Transfer and Remote Access Commands:
+
+    scp - Securely copy files between hosts.
+        Copy a local file to a remote host: scp file_name user@remote_host:/path/to/destination
+
+    ssh - Securely connect to remote hosts.
+        Connect to a remote host: ssh user@remote_host
+
+    sftp - Securely transfer files to/from a remote host.
+        Start an SFTP session: sftp user@remote_host
+        Upload a file: put file_name
+        Download a file: get file_name
+
+File System and Disk Management Commands:
+
+    fdisk - Manipulate disk partitions.
+        List partitions: sudo fdisk -l
+        Create a new partition: sudo fdisk /dev/sdX
+
+    du - Display disk usage of directories and files.
+        Show disk usage of a directory: du -h /path/to/directory
+
+    find - Search for files and directories.
+        Find files by name: find /path/to/search -name "file_name"
+
+System Information and Monitoring Commands:
+
+    top - Display real-time system information and running processes.
+        View running processes: top
+        Quit top: Press q
+
+    df - Display disk space usage.
+        Show disk space usage: df -h
+        Show usage for a specific directory: df -h /path/to/directory
+
+    free - Display information about system memory usage.
+        Show memory usage: free -m
+        
+    uname - Display system information.
+        Display system name and version: uname -a
+
+    lscpu - Display CPU information.
+        List CPU information: lscpu
+
+    lsb_release - Display distribution-specific information.
+        Show distribution information: lsb_release -a
+
+Networking Commands:
+
+    ifconfig - Display or configure network interfaces.
+        Display network interface information: ifconfig
+        Enable or disable an interface: ifconfig interface_name up/down
+
+    ping - Send ICMP echo requests to a host for network troubleshooting.
+        Ping a host: ping host_name_or_ip
+
+    netstat - Display network statistics and active connections.
+        List all active network connections: netstat -tuln
+        
+    ifup/ifdown - Bring network interfaces up or down.
+        Bring up an interface: sudo ifup interface_name
+        Bring down an interface: sudo ifdown interface_name
+
+    ss - Display socket statistics.
+        Show all listening sockets: ss -l
+
+User and Permissions Management Commands:
+
+    useradd - Add a new user to the system.
+        Add a new user: sudo useradd username
+
+    passwd - Change a user's password.
+        Change user password: sudo passwd username
+
+    chmod - Change file permissions.
+        Change file permissions (e.g., give read/write access to a file): chmod permissions file_name
+
+    chown - Change file ownership.
+        Change file ownership (e.g., change owner to a user): chown user_name file_name
+
+System Maintenance and Updates:
+
+    shutdown - Shutdown or restart the system.
+        Shutdown immediately: sudo shutdown -h now
+        Restart immediately: sudo shutdown -r now
+
+    apt-get upgrade - Upgrade installed packages.
+        Upgrade all installed packages: sudo apt-get upgrade
+        
+Text Editing Commands:
+
+    nano - A simple terminal-based text editor.
+        Open a file for editing: nano file_name
+        Save changes: Press Ctrl + O, then press Enter
+        Exit nano: Press Ctrl + X
+
+    vim - A powerful terminal text editor.
+        Open a file for editing: vim file_name
+        Enter insert mode: Press i
+        Save changes and exit: In command mode, type :wq and press Enter
+
+Process Management Commands:
+
+    ps - Display information about running processes.
+        List all processes: ps aux
+        Find a specific process: ps aux | grep process_name
+
+    kill - Terminate processes by process ID (PID).
+        Kill a process by PID: kill PID
+
+    pkill - Send signals to processes based on their name.
+        Kill all processes with a specific name: pkill process_name
+
+Text Processing Commands:
+
+    grep - Search for text patterns in files.
+        Search for a word in a file: grep "word" file_name
+        Search for a word in all files in a directory: grep -r "word" /path/to/directory
+
+    sed - Stream editor for text manipulation.
+        Replace text in a file: sed 's/old_text/new_text/' file_name
+        Perform multiple text replacements: sed -e 's/old1/new1/' -e 's/old2/new2/' file_name
+	Perform multiple text replacements: sed -i 's/Official Video/Official Audio/' music_list.txt
+
+    awk - A text processing tool for extracting and manipulating data.
+        Print specific columns from a CSV file: awk -F ',' '{print $1, $3}' file.csv
+        Calculate the sum of a column: awk '{sum += $1} END {print sum}' file.txt
+
+System Maintenance and Monitoring:
+
+    crontab - Schedule tasks to run at specified times.
+        Edit your user's cron jobs: crontab -e
+        List your user's cron jobs: crontab -l
+
+    at - Schedule a one-time command to run at a specific time.
+        Schedule a command to run at a specific time: echo "command" | at 2:30pm
+
+System Resource Monitoring:
+
+    htop - An interactive process viewer for monitoring system resources.
+        Start htop: htop
+        Navigate and interact with htop: Use arrow keys and function keys (F1-F10).
+
+    iotop - Monitor I/O usage by processes.
+        Start iotop: sudo iotop
+        
+Cache and Temporary File Management Commands:
+
+    apt clean - Remove cached package files from the package cache.
+        Clean the package cache: sudo apt clean
+
+    apt autoclean - Remove obsolete package files from the package cache.
+        Auto-clean the package cache: sudo apt autoclean
+
+    apt autoremove - Remove unused packages and their dependencies.
+        Auto-remove unused packages: sudo apt autoremove
+
+    find + rm - Find and remove files or directories based on various criteria.
+        Find and remove all files older than 7 days: find /path/to/directory -type f -mtime +7 -exec rm {} \;
+
+    tmpreaper - Remove files that haven't been accessed for a specified period.
+        Clean /tmp directory, deleting files not accessed for 7 days: sudo tmpreaper 7d /tmp
+
+Log File Cleanup:
+
+    logrotate - Manage log files and rotate them to save disk space.
+        Force log rotation for a specific log file: sudo logrotate -f /etc/logrotate.d/config_file
+
+System Cleanup Commands:
+
+    bleachbit - A system cleaner to remove unnecessary files and free up space.
+        Install BleachBit: sudo apt install bleachbit
+        Run BleachBit to clean system: bleachbit
+
+    deborphan - Find and remove orphaned libraries.
+        List orphaned libraries: deborphan
+        Remove orphaned libraries: sudo apt-get remove $(deborphan)
+
+    localepurge - Remove unneeded locale data files.
+        Install localepurge: sudo apt install localepurge
+        Run localepurge to remove unneeded locales: sudo localepurge
+
+Change default shell:
+    
+    change default shell of user: chsh -s /bin/zsh
+
+    change default shell of root: sudo chsh -s /bin/zsh root
+

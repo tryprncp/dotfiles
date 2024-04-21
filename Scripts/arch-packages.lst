@@ -1,0 +1,21 @@
+# programming
+android-studio
+neovim
+
+# utilities
+ripgrep
+btop
+github-cli
+yt-dlp
+rtorrent
+stow
+
+# virtual machine
+qemu-full
+virt-manager
+virt-viewer
+dnsmasq
+vde2
+bridge-utils
+openbsd-netcat
+

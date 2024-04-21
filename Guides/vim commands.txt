@@ -1,0 +1,41 @@
+vim commands
+
+h, j, k, l, = left, down, up, right
+w, b = jump to word
+ctrl u, ctrl d = jump up and down
+gg = jump to top
+G = jump to bottom
+
+i, a = insert before or after the cursor
+I, A = insert to the beginning or after the line
+
+/ = search to bottom
+? = search to top
+*, # = search the word to down or up
+n = jump to next result
+N = jump to previous result
+
+space dd = delete everything including the line but not yank
+space d = deletes the highlighted word but not yank
+db, dw = deletes backwards and forward
+VD = yank and deletes everything including line
+D = yank and deletes everything from the cursor to the right
+
+f = find character  after the cursor
+F = find character before the cursor
+
+viw = highlights the word
+viW = highlights everything within white spaces
+yiW = yank everything within white spaces
+diW = yank and deletes everything within white spaces
+
+vi( = highlights everything inside ()
+va( = highlights everything including ()
+vap = highlights contiguous text
+
+yi( = yanks everything inside ()
+ya( = yanks everything including ()
+
+di( = yank and deletes everything inside ()
+da( = yank and deletes everything including ()
+

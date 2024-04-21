@@ -1,0 +1,25 @@
+    git init:
+        Description: Initializes a new Git repository in the current directory. This command creates a new .git directory, which stores all the necessary files for version control.
+
+    git remote add origin <repository_url>:
+        Description: Adds a remote repository URL to the local repository. This allows you to interact with the remote repository using Git commands like push and fetch. Replace <repository_url> with the URL of the remote repository.
+
+    git add <file(s)>:
+        Description: Adds specified file(s) or changes to the staging area. Files in the staging area are ready to be committed to the repository.
+
+    git commit -m "Commit message":
+        Description: Commits the staged changes to the local repository with a descriptive commit message. This creates a new snapshot of the project's state.
+
+    git push -u origin main:
+        Description: Pushes the committed changes from the local repository to the remote repository (origin). The -u flag sets the upstream branch, allowing you to use git push without specifying the remote and branch in the future. Replace main with the branch you want to push.
+
+    git fetch origin:
+        Description: Fetches the latest changes from the remote repository (origin) to the local repository. This command updates the remote-tracking branches but does not merge them into the local branches.
+
+    git merge origin/main:
+        Description: Merges the changes from the remote main branch into the local branch. This command combines the changes from the remote branch with the local branch, incorporating any updates from the remote repository.
+
+    git push -f origin main:
+        Description: Force-pushes the local main branch to the remote repository, overwriting any changes on the remote main branch. Use with caution, as this can cause data loss if not used carefully.
+
+

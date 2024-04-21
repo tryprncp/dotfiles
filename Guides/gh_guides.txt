@@ -1,0 +1,40 @@
+Certainly! Here's the updated guide with the gh auth status command:
+
+    gh auth login:
+        Description: Authenticates you with GitHub and stores your credentials securely. This command is used to log in to GitHub and set up authentication for gh.
+
+    gh repo create:
+        Description: Creates a new repository on GitHub. You can specify the repository name, description, visibility, and other options.
+
+    gh repo clone:
+        Description: Clones a GitHub repository to your local machine. You can specify the repository to clone by providing the owner and repository name.
+
+    gh issue create:
+        Description: Creates a new issue in a GitHub repository. You can specify the title, body, labels, and other options for the issue.
+
+    gh issue list:
+        Description: Lists the issues in a GitHub repository. You can filter the list based on various criteria, such as status, assignee, and labels.
+
+    gh pr create:
+        Description: Creates a new pull request in a GitHub repository. You can specify the base branch, head branch, title, body, and other options for the pull request.
+
+    gh pr list:
+        Description: Lists the pull requests in a GitHub repository. You can filter the list based on various criteria, such as status, assignee, and labels.
+
+    gh pr review:
+        Description: Opens a review for a pull request in a GitHub repository. You can leave comments, approve or request changes, and perform other review actions.
+
+    gh pr merge:
+        Description: Merges a pull request in a GitHub repository. You can specify options such as merge method and commit message.
+
+    gh repo fork:
+        Description: Creates a fork of a GitHub repository. You can fork a repository owned by another user or organization to your own GitHub account.
+
+    gh repo view:
+        Description: Opens the repository page in the default web browser. This command allows you to quickly view the repository details, issues, pull requests, and other information on GitHub.
+
+    gh issue status:
+        Description: Shows the status of issues assigned to you in a GitHub repository. You can see which issues are open, closed, or merged.
+
+    gh auth status:
+        Description: Displays the authentication status. This command shows whether you are currently authenticated with GitHub using gh and provides information about the authentication method and expiry.
