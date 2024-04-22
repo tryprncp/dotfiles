@@ -95,3 +95,11 @@ mv .zsh_history dotfiles/
 cd dotfiles/
 stow .
 exit
+rm ../.zsh_history 
+exit
+rm ../.zsh_history 
+stow .
+exit
+clear
+c
+exit
