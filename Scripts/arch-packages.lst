@@ -9,6 +9,7 @@ github-cli
 yt-dlp
 rtorrent
 stow
+reflector
 
 # virtual machine
 qemu-full
