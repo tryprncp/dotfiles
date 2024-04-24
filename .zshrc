@@ -96,3 +96,4 @@ alias ssh='kitten ssh'
 
 #Display Pokemon
 pokemon-colorscripts --no-title -r 1,3,6
+setopt HIST_IGNORE_SPACE
