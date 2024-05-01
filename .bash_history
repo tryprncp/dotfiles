@@ -103,3 +103,8 @@ exit
 clear
 c
 exit
+cd
+rm .p10k.zsh .zshrc .zsh_history 
+cd -
+stow .
+exit

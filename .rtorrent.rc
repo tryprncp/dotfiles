@@ -37,7 +37,7 @@
 
 # Default directory to save the downloaded torrents.
 #
-#directory.default.set = ~/Downloads
+directory.default.set = ~/Downloads
 
 # Default session directory. Make sure you don't run multiple instance
 # of rTorrent using the same session directory. Perhaps using a
@@ -48,7 +48,7 @@
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
 #
-schedule2 = watch_directory,5,5,load.start=./watch/*.torrent
+schedule2 = watch_directory,5,5,load.start=~/Downloads/*.torrent
 
 # Close torrents when disk-space is low.
 #
