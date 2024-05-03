@@ -1,25 +1,128 @@
-    git init:
-        Description: Initializes a new Git repository in the current directory. This command creates a new .git directory, which stores all the necessary files for version control.
+$ git config --global init.defaultBranch main
+    # Sets the default branch to main
 
-    git remote add origin <repository_url>:
-        Description: Adds a remote repository URL to the local repository. This allows you to interact with the remote repository using Git commands like push and fetch. Replace <repository_url> with the URL of the remote repository.
+$ git config --global user.name <username>
+    # Sets the global username
 
-    git add <file(s)>:
-        Description: Adds specified file(s) or changes to the staging area. Files in the staging area are ready to be committed to the repository.
+$ git config --global user.email <email>
+    # Sets the global user email
 
-    git commit -m "Commit message":
-        Description: Commits the staged changes to the local repository with a descriptive commit message. This creates a new snapshot of the project's state.
+$ git config --global core.compression 0
+    # Sets the core.compression to 0
 
-    git push -u origin main:
-        Description: Pushes the committed changes from the local repository to the remote repository (origin). The -u flag sets the upstream branch, allowing you to use git push without specifying the remote and branch in the future. Replace main with the branch you want to push.
+$ git remote -v
+    # Lists remote repositories
 
-    git fetch origin:
-        Description: Fetches the latest changes from the remote repository (origin) to the local repository. This command updates the remote-tracking branches but does not merge them into the local branches.
+$ git branch -r
+    # Lists branches from remote repositories
 
-    git merge origin/main:
-        Description: Merges the changes from the remote main branch into the local branch. This command combines the changes from the remote branch with the local branch, incorporating any updates from the remote repository.
+$ git fetch 
+    # Fetches the latest commits from the remote repository of the current branch
 
-    git push -f origin main:
-        Description: Force-pushes the local main branch to the remote repository, overwriting any changes on the remote main branch. Use with caution, as this can cause data loss if not used carefully.
+$ git fetch --all
+    # Fetches the latest commits from all remote repositories
 
+$ git fetch --unshallow
+    # Fetches the full history of the remote repository
 
+$ git log HEAD..origin/master
+    # Shows what commits are in origin/master that are not in your current branch.
+
+$ git init
+    # Initializes a new $ git repository in the current directory. This command creates a new .git directory, which stores all the necessary files for version control.
+
+$ git remote add origin <repository_url>
+    # Adds a remote repository URL to the local repository. This allows you to interact with the remote repository using $ git commands like push and fetch. Replace <repository_url> with the URL of the remote repository.
+
+$ git add <file(s)>
+    # Adds specified file(s) or changes to the staging area. Files in the staging area are ready to be committed to the repository.
+
+$ git commit -m "Commit message"
+    # Commits the staged changes to the local repository with a descriptive commit message. This creates a new snapshot of the project's state.
+
+$ git push -u origin main
+    # Pushes the committed changes from the local repository to the remote repository (origin). The -u flag sets the upstream branch, allowing you to use $ git push without specifying the remote and branch in the future. Replace main with the branch you want to push.
+
+$ git fetch origin
+    # Fetches the latest changes from the remote repository (origin) to the local repository. This command updates the remote-tracking branches but does not merge them into the local branches.
+
+$ git merge origin/main
+    # Merges the changes from the remote main branch into the local branch. This command combines the changes from the remote branch with the local branch, incorporating any updates from the remote repository.
+
+$ git push -f origin main
+    # Force-pushes the local main branch to the remote repository, overwriting any changes on the remote main branch. Use with caution, as this can cause data loss if not used carefully.
+
+$ git branch -u upstream/main
+    # Sets the branch to track 'main' from the 'upstream' repository. The -u option is short for --set-upstream-to, which sets the default upstream for the current branch.
+
+$ git merge origin/main
+    # Merges changes from the origin/main to the current branch
+
+$ git clone <repository_url>
+    # Clones a remote repository into a new directory locally. This command creates a complete copy of the data that the repository contains.
+
+$ git status
+    # Shows the current status of the local working directory including untracked files, modified files, and files staged for commit.
+
+$ git diff
+    # Displays the differences not yet staged.
+
+$ git diff --staged
+    # Shows differences between the staging area and the last commit; useful for reviewing changes before committing.
+
+$ git checkout <branch_name>
+    # Switches from the current branch to another specified branch. Updates the working directory to match the selected branch.
+
+$ git checkout -b <new_branch_name>
+    # Creates a new branch and checks it out immediately.
+
+$ git stash
+    # Temporarily stores all modified tracked files and staged changes. Useful for achieving a clean working directory by setting aside the current work.
+
+$ git stash pop
+    # Restores the most recently stashed files and removes it from the stash stack.
+
+$ git reset <file>
+    # Unstages specified file, but preserves the file contents. Useful for undoing a $ git add before a commit.
+
+$ git reset --hard
+    # Resets the current branch to the last committed state, discarding all changes in the working directory and staging area.
+
+$ git revert <commit>
+    # Creates a new commit that undoes the changes made in a specified commit. Useful for undoing changes without rewriting history.
+
+$ git tag <tag_name> <commit_id>
+    # Applies a tag to a specific commit for marking release points like v1.0, v2.0, etc.
+
+$ git log --oneline
+    # Displays a condensed view of the commit history with each commit on a single line, useful for a quick summary of changes.
+
+$ git log --graph --decorate --all
+    # Displays the commit logs with an ASCII graph of the branch and merge history alongside the commit messages.
+
+$ git cherry-pick <commit>
+    # Applies the changes introduced by some existing commits. Useful for applying specific commits from one branch onto another.
+
+$ git pull --rebase
+    # Fetches the newest commits from the remote repository and rebases your work on top of it. Useful for maintaining a clean commit history.
+
+$ git blame <file>
+    # Shows line-by-line authorship for specified file, useful for understanding who made changes to a file and when.
+
+$ git rm <file>
+    # Removes files from the working directory and stages the deletion for commit.
+
+$ git remote set-url origin <new_repository_url>
+    # Changes the URL that a remote repository points to. Useful when the location of the repository changes.
+
+$ git bisect start
+    # Starts a bisect session to identify the commit that introduced a bug by using binary search.
+
+$ git bisect good <commit>
+    # Marks a commit as good in a $ git bisect session.
+
+$ git bisect bad <commit>
+    # Marks a commit as bad in a $ git bisect session.
+
+$ git bisect reset
+    # Ends a bisect session and returns to the original branch.

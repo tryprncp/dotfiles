@@ -108,3 +108,6 @@ rm .p10k.zsh .zshrc .zsh_history
 cd -
 stow .
 exit
+rm ../.zsh_history 
+stow .
+exit
