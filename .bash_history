@@ -111,3 +111,12 @@ exit
 rm ../.zsh_history 
 stow .
 exit
+ssh troy@127.0.0.1
+exit
+ssh troy@127.0.0.1
+exit
+cd dotfiles/
+stow .
+rm ../.p10k.zsh 
+stow .
+exit
