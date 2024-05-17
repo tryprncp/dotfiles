@@ -1,3 +1,5 @@
+# Git configuration
+
 $ git config --global init.defaultBranch main
     # Sets the default branch to main
 
@@ -9,6 +11,8 @@ $ git config --global user.email <email>
 
 $ git config --global core.compression 0
     # Sets the core.compression to 0
+
+# Git branch management
 
 $ git remote -v
     # Lists remote repositories
@@ -72,6 +76,9 @@ $ git diff --staged
 
 $ git checkout <branch_name>
     # Switches from the current branch to another specified branch. Updates the working directory to match the selected branch.
+
+$ git checkout --orphan <new-branch-name>
+    # Creates and checkout a branch that has no commit history relative to the branch from which it was created. 
 
 $ git checkout -b <new_branch_name>
     # Creates a new branch and checks it out immediately.

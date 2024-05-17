@@ -77,6 +77,7 @@ alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code' # gui code editor
+alias yoink='yay'
 
 # Handy change dir shortcuts
 alias ..='cd ..'
@@ -92,5 +93,15 @@ alias mkdir='mkdir -p'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Display Pokemon
-pokemon-colorscripts --no-title -r 1,3,6
+#pokemon-colorscripts --no-title -r 1,3,6
 setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+# Shell integrations
+eval "$(fzf --zsh)"
+
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
