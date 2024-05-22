@@ -48,7 +48,7 @@ directory.default.set = ~/Downloads
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
 #
-schedule2 = watch_directory,5,5,load.start=~/Downloads/*.torrent
+# schedule2 = watch_directory,5,5,load.start=~/Downloads/*.torrent
 
 # Close torrents when disk-space is low.
 #

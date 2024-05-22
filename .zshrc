@@ -65,7 +65,8 @@ function in {
 }
 
 # Helpful aliases
-alias  c='clear ; source ~/.zshrc' # clear terminal
+alias so='source ~/.zshrc'
+alias  c='clear' # clear terminal
 alias  l='eza -lh  --icons=auto' # long list
 alias ls='eza -1   --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
@@ -94,9 +95,19 @@ alias mkdir='mkdir -p'
 
 #Display Pokemon
 #pokemon-colorscripts --no-title -r 1,3,6
+
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_IGNORE_DUPS
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
+setopt HIST_REDUCE_BLANKS
+
+# Remove duplicated commands in zsh_history
+function dedupped {
+    cat -n "$HISTFILE" | sort -t ';' -uk2 | sort -nk1 | cut -f2- > "$HISTFILE"
+}
+dedupped
 
 # Shell integrations
 eval "$(fzf --zsh)"

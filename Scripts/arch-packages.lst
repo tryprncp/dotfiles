@@ -10,6 +10,7 @@ yt-dlp
 rtorrent
 stow
 reflector
+fzf
 
 # virtual machine
 qemu-full
@@ -20,3 +21,12 @@ vde2
 bridge-utils
 openbsd-netcat
 
+# wine
+wine
+wine-gecko
+wine-mono
+winetricks
+
+# applications
+vlc
+pix
