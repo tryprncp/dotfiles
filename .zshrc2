@@ -59,6 +59,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias ll='ls -al'
 alias c='clear'
 alias pacman='sudo pacman'
 alias mkdir='mkdir -p'
