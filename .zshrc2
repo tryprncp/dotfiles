@@ -63,6 +63,7 @@ alias ls='eza -1 --icons=auto'
 alias ll='ls -al'
 alias c='clear'
 alias pacman='sudo pacman'
+alias apt='sudo apt'
 alias mkdir='mkdir -p'
 alias yoink='yay'
 
