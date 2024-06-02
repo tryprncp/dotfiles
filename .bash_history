@@ -120,3 +120,12 @@ stow .
 rm ../.p10k.zsh 
 stow .
 exit
+ls --help
+ls -d Downloads/
+ls -d Downloads/*
+ls -D Downloads/
+man ls
+ls --help
+ls -dR Downloads/
+ls Downloads/*.torrent
+exit
