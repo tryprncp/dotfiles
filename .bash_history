@@ -129,3 +129,10 @@ ls --help
 ls -dR Downloads/
 ls Downloads/*.torrent
 exit
+./myfirstprogram 
+exit
+cd
+mv .zsh_history dotfiles/
+cd dotfiles/
+stow .
+exit
