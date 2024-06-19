@@ -11,13 +11,11 @@ art_text = """
 ━━┃┃━━┃┗┛┃┃┗┛┃━┏┛┗┓━┃┗┛┃┃┗┛┃┃┃━┫━━━━┃┗┛┃┃┗┛┃┗┓┏┓┏┛┃┃┃┃┃┗┓┃┗┛┃┃┗┛┗┓┃┗┛┃┃┃━┫┃┃━
 ━━┗┛━━┗━━┛┗━━┛━┗━━┛━┗━━┛┗━━┛┗━━┛━━━━┗━━┛┗━━┛━┗┛┗┛━┗┛┗┛┗━┛┗━━┛┗━━━┛┗━━┛┗━━┛┗┛━
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """
 
 def main():
     print(art_text)
     link = get_url()
-
     match download_format():
             case "1":
                 download_mp3(link, download_directory())
@@ -73,7 +71,6 @@ def download_quality():
 def download_directory():
     default_path = "~/Videos/downloads"
     print(f"\nDefault download directory: {default_path}")
-
     print("Enter new download directory to override the default directory, otherwise skip")
     home = "~/"
     new_path = input(f"\nNew directory: {home}")
