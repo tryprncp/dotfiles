@@ -60,12 +60,11 @@ cat <<HOSTS > /etc/hosts
 127.0.0.1  $HOSTNAME
 HOSTS
 
-echo -e "$ROOT_PASSWORD\n$ROOT_PASSWORD" | passwd
-
 mount --mkdir /dev/nvme0n1p1 /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
+echo -e "$ROOT_PASSWORD\n$ROOT_PASSWORD" | passwd
 useradd -m $USERNAME
 echo -e "$USER_PASSWORD\n$USER_PASSWORD" | passwd $USERNAME
 usermod -aG wheel,audio,video,storage $USERNAME
@@ -76,7 +75,7 @@ EOF_CHROOT
 
 if [ "$TYPE" == "2" ]; then
     echo "su - $USERNAME" >> /root/chroot_script.sh
-    echo "git clone --depth 1 https://github.com/tryprncp/hyprdots HyDE ; ./HyDE/Scripts/install.sh"
+    echo "git clone --depth 1 https://github.com/tryprncp/hyprdots HyDE && ./HyDE/Scripts/install.sh" >> /root/chroot_script.sh
 fi
 
 arch-chroot /mnt /bin/bash /root/chroot_script.sh
