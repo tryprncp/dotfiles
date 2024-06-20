@@ -6,6 +6,18 @@ function msg {
     echo -e "\n$1\n"
 }
 
+echo "Choose installation type:"
+read -p "1) Clean install, 2) With HyDE (default is 1): " TYPE
+
+# Default to 1 if the user presses Enter without input
+TYPE="${TYPE:-1}"
+
+# Validate input to ensure it's either 1 or 2
+if [ "$TYPE" != "1" ] && [ "$TYPE" != "2" ]; then
+    echo "Invalid input. Please choose 1 or 2."
+    exit 1
+fi
+
 read -p "Enter hostname: " HOSTNAME
 read -s -p "Enter root password: " ROOT_PASSWORD
 echo
@@ -41,7 +53,7 @@ msg "Mounting the filesystem..."
 mount /dev/nvme0n1p2 /mnt
 
 msg "Installing base system and packages..."
-pacstrap /mnt base linux linux-firmware sof-firmware intel-ucode grub efibootmgr sudo networkmanager git neovim man-db --needed
+pacstrap /mnt base base-devel linux linux-firmware sof-firmware intel-ucode grub efibootmgr sudo networkmanager git neovim man-db --needed
 
 msg "Generating fstab..."
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -92,6 +104,11 @@ echo "$USERNAME ALL=(ALL) ALL" | sudo tee /etc/sudoers.d/$USERNAME
 msg "Enabling NetworkManager service..."
 systemctl enable NetworkManager
 EOF_CHROOT
+
+if [ "$TYPE" == "2" ]; then
+    echo "su - $USERNAME" >> /root/chroot_script.sh
+    echo "git clone --depth 1 https://github.com/tryprncp/hyprdots HyDE ; ./HyDE/Scripts/install.sh"
+fi
 
 msg "Entering chroot and running chroot script..."
 arch-chroot /mnt /bin/bash /root/chroot_script.sh
