@@ -28,14 +28,15 @@ pacman -Syy
 pacman -S --noconfirm reflector
 reflector -c "SG" -f 10 -l 10 -n 10 --save /etc/pacman.d/mirrorlist
 
-parted /dev/nvme0n1 --script mklabel gpt
-parted /dev/nvme0n1 --script mkpart primary fat32 1MiB 500MiB
-parted /dev/nvme0n1 --script set 1 esp on
-parted /dev/nvme0n1 --script mkpart primary ext4 500MiB 100%
-
-mkfs.fat -F 32 /dev/nvme0n1p1
-mkfs.ext4 /dev/nvme0n1p2
-mount /dev/nvme0n1p2 /mnt
+if [ ! -e /dev/nvme0n1p1 ]; then
+    parted /dev/nvme0n1 --script mklabel gpt
+    parted /dev/nvme0n1 --script mkpart primary fat32 1MiB 500MiB
+    parted /dev/nvme0n1 --script set 1 esp on
+    parted /dev/nvme0n1 --script mkpart primary ext4 500MiB 100%
+    mkfs.fat -F 32 /dev/nvme0n1p1
+    mkfs.ext4 /dev/nvme0n1p2
+    mount /dev/nvme0n1p2 /mnt
+fi
 
 pacstrap /mnt base base-devel linux linux-firmware sof-firmware intel-ucode grub efibootmgr sudo networkmanager git neovim man-db --needed
 
