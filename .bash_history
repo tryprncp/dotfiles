@@ -136,3 +136,9 @@ mv .zsh_history dotfiles/
 cd dotfiles/
 stow .
 exit
+stow .
+cd
+rm .bash_history .bashrc .p10k.zsh .zsh_history 
+cd -
+stow .
+exit
